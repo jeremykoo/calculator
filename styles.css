@@ -1,11 +1,14 @@
+html,
+button {
+    font-family: monospace;
+}
+
 html {
     background-color: beige;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: monospace;
-    font-size: 24px;
 }
 
 .grid {
@@ -17,30 +20,42 @@ html {
     column-gap: 4px;
     row-gap: 4px;
     background-color: black;
+    border-radius: 8px;
 }
 
-.number,
-.operation,
-.function {
-    border-radius: 10px;
+button {
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 24px;
 }
 
 .number {
-    background-color: darkcyan;
+    background-color: #3498db;
+}
+
+.number:active {
+    background-color: #5dade2;
 }
 
 .operation {
-    background-color: aqua;
+    background-color: #F39C12;
+}
+
+.operation:active {
+    background-color: #f8c471;
 }
 
 .function {
-    background-color: orange;
+    background-color: #16a085;
 }
 
-.result {
+.function:active {
+    background-color: #45b39d;
+}
+
+.display {
     grid-column: 1 / 5;
     grid-row: 1 / 2;
     display: flex;
@@ -51,6 +66,7 @@ html {
     background-color: lightgray;
     margin-bottom: 4px;
     padding: 0 4px;
+    text-shadow: gray 2px 2px;
 }
 
 .zero {
