@@ -57,25 +57,30 @@ fns.forEach((fn) => {
 const operations = document.querySelectorAll(".operation");
 operations.forEach((operation) => {
     operation.addEventListener("click", () => {
-        if (num1 == null) {
-            num1 = displayValue;
-            displayValue = "";
-        }
-        else {
-            num2 = displayValue;
-            displayValue = "";
-        }
+        // if (operation1 && num2 == null) {
+        //     console.log("illegal operation");   
+        // }
+        // else {
+            if (num1 == null) {
+                num1 = displayValue;
+                displayValue = "";
+            }
+            else {
+                num2 = displayValue;
+                displayValue = "";
+            }
 
-        let math = operation.textContent;
-        if (operation1 == null) {
-            operation1 = math;
-        } else {
-            operation2 = math;
-            evaluate();
-            updateDisplay();
-            displayValue = "";
-        }
-        console.log(`operation = ${operation1}`);
+            let math = operation.textContent;
+            if (operation1 == null) {
+                operation1 = math;
+            } else {
+                operation2 = math;
+                evaluate();
+                updateDisplay();
+                displayValue = "";
+            }
+            console.log(`operation = ${operation1}`);
+        // }
     });
 });
 
@@ -162,8 +167,12 @@ function evaluate() {
     }
     else if (operation1 == "/") {
         if (num1 && num2) {
-            result = Number(num1) / Number(num2);
-            displayValue = result;
+            if (num2 == "0") {
+                displayValue = "LMAO";
+            } else {
+                result = Number(num1) / Number(num2);
+                displayValue = result;
+            }
         }
     }
 
